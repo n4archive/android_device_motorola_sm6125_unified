@@ -17,7 +17,7 @@
 set -e
 
 VENDOR=motorola
-DEVICE=sm6125_common
+DEVICE=sm6125_unified
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -25,7 +25,7 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 OMNI_ROOT="$MY_DIR"/../../..
 
-HELPER="$OMNI_ROOT"/vendor/omni/build/tools/extract_utils.sh
+HELPER="$OMNI_ROOT"/vendor/lineage/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1

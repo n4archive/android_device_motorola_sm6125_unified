@@ -1,4 +1,5 @@
-# Copyright (C) 2021 The OmniROM Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,12 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include device/motorola/sm6125-common/BoardConfigCommon.mk
+$(call inherit-product, device/motorola/sm6125-common/common.mk)
 
-DEVICE_PATH := device/motorola/sm6125_unified
+PRODUCT_PACKAGES += \
+    MotoRav \
+    MotoRavT \
+    MotoSofia \
+    MotoSofiaP \
+    MotoSofiaPSprout \
+    MotoSofiaR
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_moto_trinket
-
-# Soong
-PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+PRODUCT_PACKAGES += \
+    SystemUI_MotoRav \
+    SystemUI_MotoRavT \
+    SystemUI_MotoSofia \
+    SystemUI_MotoSofiaP \
+    SystemUI_MotoSofiaPSprout \
+    SystemUI_MotoSofiaR
